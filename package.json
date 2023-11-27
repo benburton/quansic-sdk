@@ -1,6 +1,7 @@
 {
   "name": "quansic-sdk",
   "description": "A TypeScript REST connector and GraphQL service implementation of the Quansic API.",
+  "license": "MIT",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
