@@ -1,0 +1,6 @@
+type Release {
+    upc: ID!
+    title: String
+    year: String
+    parties(type: String): [Party!]!
+}

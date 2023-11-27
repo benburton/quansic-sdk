@@ -1,0 +1,5 @@
+type Work {
+    iswc: String!
+    title: String!
+    recordings(limit: Int, offset: Int): [Recording!]!
+}

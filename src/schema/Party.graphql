@@ -1,0 +1,88 @@
+"""
+A `Party` generally represents a band or person involved with production of a sound recording or musical work.
+"""
+type Party {
+    """
+    Container for the identifiers on a `Party`. Internally `quansicId` is used a lot.
+    """
+    ids: PartyIds!
+    
+    """
+    Comment about the `Party`. This can sometimes be `null`, as it is not always returned from the Quansic API.
+    """
+    comment: String
+
+    """
+    Name of the party.
+    """
+    name: String!
+
+    """
+    First name of the party. This is not always defined, although `name` always is.
+    """
+    firstName: String
+
+    """
+    Last name of the party. This is not always defined, although `name` always is.
+    """
+    lastName: String
+    
+    """
+    A URL for an image of the `Party`.
+    """
+    visual: String
+
+    """
+    Nationality of the `Party`.
+    """
+    nationality: String
+
+    """
+    """
+    nationalitySource: String
+    
+    """
+    0-100 popularity score for the `Party` (looks to be proprietary to Quansic)
+    """
+    popularity: Int
+    
+    """
+    Date of birth for the `Party` if it represents a person, year of formation of band if a band.
+    """
+    birthDate: String
+
+    """
+    Date of detah for the `Party` if it represents a person, year of break up if a band.
+    """
+    deathDate: String
+
+    """
+    Either `RealName` or `Pseudonym`. 
+    """
+    nameType: String
+
+    """
+    Either `Band` or `Person`, this represents whether or not the `Party` represents an individual or a collective.
+    """
+    type: String
+
+    """
+    The gender of the `Party`, if it represents a person.
+    """
+    gender: String
+
+    """
+    The `Release`s associated with the `Party`.
+    """
+    releases(limit: Int, offset: Int): [Release!]!
+
+    """
+    The `Recording`s associated with the `Party`.
+    """
+    recordings(limit: Int, offset: Int): [Recording!]!
+}
+
+type PartyIds {
+    quansicId: String!
+    discogsIds: [String!]!
+}

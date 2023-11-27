@@ -1,0 +1,5 @@
+type Query {
+    recordingByISRC(isrc: String!): Recording
+    releaseByUPC(upc: String!): Release
+    searchParties(name: String!, limit: Int, offset: Int): [Party!]!
+}

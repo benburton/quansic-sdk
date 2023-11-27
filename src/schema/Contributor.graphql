@@ -1,0 +1,21 @@
+type Contributor {
+    ids: PartyIds!
+    comment: String
+    name: String!
+    firstName: String
+    lastName: String
+    visual: String
+    nationality: String
+    nationalitySource: String
+    popularity: Int
+    birthDate: String
+    deathDate: String
+    nameType: String
+    type: String
+    gender: String
+    releases(limit: Int, offset: Int): [Release!]!
+    recordings(limit: Int, offset: Int): [Recording!]!
+
+    contributorType: String
+    role: String
+}

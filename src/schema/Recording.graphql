@@ -1,0 +1,6 @@
+type Recording {
+    isrc: ID!
+    title: String!
+    works: [Work!]!
+    contributors(type: String): [Contributor!]!
+}
